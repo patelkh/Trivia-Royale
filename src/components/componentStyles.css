@@ -38,3 +38,21 @@
     font-weight: bold;
     margin-bottom: 20px;
 }
+
+.setting-form-button-disable {
+    background-color: gray;
+    pointer-events: none;
+}
+
+.trivia-question {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.correct {
+    color: green
+}
+
+.incorrect {
+    color: red
+}

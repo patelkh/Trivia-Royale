@@ -1,14 +1,35 @@
-.home-header{
-    padding: 50px;
-    color:rgb(59, 59, 137)
+.home-header,
+.trivia-header {
+  padding: 50px;
+  /* color:rgb(59, 59, 137) */
 }
-.home-container {
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-    margin: auto;
-    border: 2px solid rgb(59, 59, 137);
-    border-radius: 10px;
-    width: 300px;
-    background: linear-gradient(white, aliceblue);
+.home-container,
+.trivia-container {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  margin: auto;
+  border: 2px solid rgb(59, 59, 137);
+  border-radius: 10px;
+  width: 300px;
+  background: linear-gradient(white, aliceblue);
 }
+
+
+.trivia-container {
+  width: 400px;
+}
+
+.trivia-next-button, .trivia-cancel-button {
+  height: 35px;
+  width: 175px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(59, 59, 137);
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-right: 8px;
+}
+
