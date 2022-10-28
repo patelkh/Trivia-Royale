@@ -1,0 +1,14 @@
+.home-header{
+    padding: 50px;
+    color:rgb(59, 59, 137)
+}
+.home-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    margin: auto;
+    border: 2px solid rgb(59, 59, 137);
+    border-radius: 10px;
+    width: 300px;
+    background: linear-gradient(white, aliceblue);
+}

@@ -1,0 +1,39 @@
+.settings-container {
+    padding: 20px;
+    text-align: left;
+}
+
+.settings-container > h2 {
+    color:rgb(59, 59, 137)
+}
+
+.setting-form > label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: rgb(59, 59, 137);
+    margin-bottom: 8px;
+}
+
+.setting-form > select {
+    display: flex;
+    align-items: left;
+    height: 30px;
+    width: 200px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border: 1px solid dodgerblue;
+    font-size: 14px;
+    
+}
+
+.setting-form-button {
+    height: 35px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    font-size: 14px;
+    font-weight: bold;
+}
