@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Home from "./pages/home";
+import Summary from "./pages/summary";
 import Trivia from "./pages/trivia";
+import Background from "./components/Background";
 
 export default function App() {
   const [category, setCategory] = useState(11);
@@ -12,12 +14,10 @@ export default function App() {
   const [amount, setAmount] = useState(5);
   const [score, setScore] = useState(0);
 
-  useEffect(() => {
-    localStorage.removeItem("trivia");
-  });
   return (
     <div className="App">
       <Router>
+        <Background/>
         <Routes>
           <Route
             path="/"
@@ -39,6 +39,17 @@ export default function App() {
               <Trivia category={category} score={score} setScore={setScore} />
             }
           ></Route>
+          <Route 
+            path="/summary"
+            element={
+              <Summary
+                  setCategory={setCategory}
+                  setDifficulty={setDifficulty}
+                  setAmount={setAmount}
+                  setScore={setScore} 
+                  score={score}/>
+            }
+            ></Route>
         </Routes>
         <Footer />
       </Router>

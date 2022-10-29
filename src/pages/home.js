@@ -9,8 +9,6 @@ export default function Home({category, difficulty, quizType, amount, setCategor
 
     const getQuestions = async () => {
         let openTriviaURL = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${quizType}`;
-        
-        console.log(openTriviaURL)
 
         try {
           const response = await fetch(openTriviaURL);
@@ -50,7 +48,7 @@ export default function Home({category, difficulty, quizType, amount, setCategor
       }
     return (
         <div className="home-header">
-            <h1>Trivia Royale</h1>
+            <h1 className="heading">Trivia Royale</h1>
         <div className="home-container">
             <Settings 
                 getQuestions={getQuestions}

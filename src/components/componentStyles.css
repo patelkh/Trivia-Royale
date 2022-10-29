@@ -56,3 +56,23 @@
 .incorrect {
     color: red
 }
+
+.footer-container {
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.background-header {
+    padding: 10px;
+  }
+  
+  .background-image {
+    border: 1px solid rgb(59, 59, 137);
+    border-radius: 10px;
+    height: 75px;
+    width: 150px;
+    margin-right: 8px;
+  }
+  

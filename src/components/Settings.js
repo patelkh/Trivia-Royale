@@ -22,7 +22,7 @@ export default function Settings({
     return Object.entries(difficulty).map((option, index) => {
       return (
         <option key={index} defaultValue={option[0]}>
-           {option[1]}
+          {option[1]}
         </option>
       );
     });
@@ -53,7 +53,13 @@ export default function Settings({
         <select
           className="setting-form-field"
           name="category"
-          onChange={(e) => setCategory(Object.keys(categories).find(key => categories[key] === e.target.value))}
+          onChange={(e) =>
+            setCategory(
+              Object.keys(categories).find(
+                (key) => categories[key] === e.target.value
+              )
+            )
+          }
         >
           <DisplayCategories />
         </select>
@@ -61,15 +67,18 @@ export default function Settings({
         <select
           className="setting-form-field"
           name="difficulty"
-          onChange={(e) => setDifficulty(Object.keys(difficulty).find(key => difficulty[key] === e.target.value))}
+          onChange={(e) =>
+            setDifficulty(
+              Object.keys(difficulty).find(
+                (key) => difficulty[key] === e.target.value
+              )
+            )
+          }
         >
           <DisplayDifficulty />
         </select>
         <label className="setting-form-label">Type:</label>
-        <select
-          className="setting-form-field"
-          name="type"
-        >
+        <select className="setting-form-field" name="type">
           <option value="multiple">Multiple Choice</option>
         </select>
         <label className="setting-form-label">No of Questions:</label>

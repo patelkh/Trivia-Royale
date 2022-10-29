@@ -1,8 +1,15 @@
 .home-header,
-.trivia-header {
-  padding: 50px;
-  /* color:rgb(59, 59, 137) */
+.trivia-header, .summary-header {
+  padding: 20px;
 }
+
+.heading {
+  color: white;
+  text-shadow: 2px 2px black;
+
+    font-weight: bolder;
+}
+
 .home-container,
 .trivia-container {
   display: flex;
@@ -20,7 +27,17 @@
   width: 400px;
 }
 
-.trivia-next-button, .trivia-cancel-button {
+.summary-container {
+  padding: 25px;
+  margin: auto;
+  border: 2px solid rgb(59, 59, 137);
+  border-radius: 10px;
+  width: 300px;
+  background: linear-gradient(white, aliceblue);
+}
+
+
+.trivia-next-button, .trivia-cancel-button, .summary-home-button {
   height: 35px;
   width: 175px;
   border: none;

@@ -43,7 +43,7 @@ export default function Trivia({ category, score, setScore }) {
 
   function showSummary() {
     setScore(score);
-    navigate("/");
+    navigate("/summary");
   }
 
   function computeScore(answer, correct_answer) {
@@ -58,7 +58,7 @@ export default function Trivia({ category, score, setScore }) {
 
   return (
     <div className="trivia-header">
-      <h1>Trivia Topic: {title}</h1>
+      <h1 className="heading">Trivia Topic: {title}</h1>
       <div className="trivia-container">
         <div className="trivia-stats">
           <p>
