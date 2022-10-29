@@ -6,17 +6,21 @@ import { useNavigate } from "react-router-dom";
 
 export default function Trivia({ category, score, setScore }) {
   const [title, setTitle] = useState("");
-  const [triviaData, setTrivia] = useState(JSON.parse(localStorage.getItem("trivia")));
+  const [triviaData, setTrivia] = useState(
+    JSON.parse(localStorage.getItem("trivia"))
+  );
   const [triviaIndex, setTriviaIndex] = useState(0);
   const [questionNum, setQNum] = useState(1);
-  const [currentQuestion, setCurrentQuestion] = useState(triviaData[triviaIndex]);
+  const [currentQuestion, setCurrentQuestion] = useState(
+    triviaData[triviaIndex]
+  );
   const [step, setStep] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
     setTitle(categories[category]);
     if (currentQuestion === undefined) {
-      alert('Unable to fetch data from Open Trivia Database')
+      alert("Unable to fetch data from Open Trivia Database");
       navigate("/");
     } else {
       getNextQuestion();
@@ -53,7 +57,7 @@ export default function Trivia({ category, score, setScore }) {
   }
 
   function goHome() {
-    navigate('/')
+    navigate("/");
   }
 
   return (
@@ -74,11 +78,12 @@ export default function Trivia({ category, score, setScore }) {
                 computeScore={computeScore}
                 currentQuestion={currentQuestion}
               />
-                <button className="trivia-cancel-button" onClick={goHome}>Cancel</button>
+              <button className="trivia-cancel-button" onClick={goHome}>
+                Cancel
+              </button>
               <button className="trivia-next-button" onClick={updateStep}>
                 Next
               </button>
-            
             </div>
           )}
         </div>

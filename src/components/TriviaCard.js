@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { MdCheckCircleOutline, MdClose } from "react-icons/md";
 
-
 const TriviaCard = ({ computeScore, currentQuestion }) => {
-  let [selected, setSelected] = useState(""); 
-  let [isDisable, setIsDisable] = useState(false); 
-  let [isSelected, setIsSelected] = useState(false); 
+  let [selected, setSelected] = useState("");
+  let [isDisable, setIsDisable] = useState(false);
+  let [isSelected, setIsSelected] = useState(false);
 
   let question = currentQuestion[0][0]
     .replace(/&amp;/g, "&")
@@ -16,7 +15,6 @@ const TriviaCard = ({ computeScore, currentQuestion }) => {
   let options = currentQuestion[1];
   let answer = currentQuestion[2][0];
 
-  /* Clears out state variables when options and answer variables are changed */
   useEffect(() => {
     const clearStates = () => {
       setSelected("");
@@ -26,19 +24,16 @@ const TriviaCard = ({ computeScore, currentQuestion }) => {
     clearStates();
   }, [question]);
 
-  /* Stores the selected answer in the state variable and calls subsequent functions */
   const updateSelected = (e) => {
     setSelected(e.target.value);
     disableButton();
     Result();
   };
 
-  /* Disables the answer options */
   const disableButton = () => {
     setIsDisable(true);
   };
 
-  /* Displays whether the selected answer is correct or incorrect */
   const Result = () => {
     setIsSelected(true);
     if (selected === answer) {

@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className="App">
       <Router>
-        <Background/>
+        <Background />
         <Routes>
           <Route
             path="/"
@@ -39,17 +39,18 @@ export default function App() {
               <Trivia category={category} score={score} setScore={setScore} />
             }
           ></Route>
-          <Route 
+          <Route
             path="/summary"
             element={
               <Summary
-                  setCategory={setCategory}
-                  setDifficulty={setDifficulty}
-                  setAmount={setAmount}
-                  setScore={setScore} 
-                  score={score}/>
+                setCategory={setCategory}
+                setDifficulty={setDifficulty}
+                setAmount={setAmount}
+                setScore={setScore}
+                score={score}
+              />
             }
-            ></Route>
+          ></Route>
         </Routes>
         <Footer />
       </Router>
