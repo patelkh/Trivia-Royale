@@ -1,3 +1,5 @@
 # Single Player Trivia App
 * **View app:** https://kays-trivia-app.herokuapp.com<br><br>
-<img width="667" alt="Screen Shot 2022-10-28 at 7 30 46 PM" src="https://user-images.githubusercontent.com/76967126/198838828-6b1a15c5-cc28-42e5-a5d9-f9ad1bbab97b.png"><br><br>
+
+<img width="720" alt="Screen Shot 2022-10-29 at 10 38 32 AM" src="https://user-images.githubusercontent.com/76967126/198845619-2ad89dfa-667a-44eb-8f90-2e970e6fa2ad.png"><br><br>
+<img width="720" alt="Screen Shot 2022-10-29 at 10 38 57 AM" src="https://user-images.githubusercontent.com/76967126/198845622-1051fc27-f36e-45c0-8fac-75154dd29638.png"><br><br>
