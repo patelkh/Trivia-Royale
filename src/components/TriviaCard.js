@@ -12,8 +12,10 @@ const TriviaCard = ({ computeScore, currentQuestion }) => {
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#039;/g, "'");
-  let options = currentQuestion[1];
-  let answer = currentQuestion[2][0];
+  let options = currentQuestion[1]
+
+  let answer = currentQuestion[2][0]
+
 
   useEffect(() => {
     const clearStates = () => {

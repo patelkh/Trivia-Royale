@@ -52,8 +52,9 @@ export default function Settings({
         <label className="setting-form-label">Category:</label>
         <select
           className="setting-form-field"
+          id="category"
           name="category"
-          onChange={(e) =>
+          onSelect={(e) =>
             setCategory(
               Object.keys(categories).find(
                 (key) => categories[key] === e.target.value
@@ -66,8 +67,9 @@ export default function Settings({
         <label className="setting-form-label">Difficulty:</label>
         <select
           className="setting-form-field"
+          id="difficulty"
           name="difficulty"
-          onChange={(e) =>
+          onSelect={(e) =>
             setDifficulty(
               Object.keys(difficulty).find(
                 (key) => difficulty[key] === e.target.value
@@ -78,14 +80,15 @@ export default function Settings({
           <DisplayDifficulty />
         </select>
         <label className="setting-form-label">Type:</label>
-        <select className="setting-form-field" name="type">
+        <select className="setting-form-field" id="type" name="type">
           <option value="multiple">Multiple Choice</option>
         </select>
         <label className="setting-form-label">No of Questions:</label>
         <select
           className="setting-form-field"
+          id="amount"
           name="amount"
-          onChange={(e) => setAmount(e.target.value)}
+          onSelect={(e) => setAmount(e.target.value)}
         >
           <DisplayAmount />
         </select>
