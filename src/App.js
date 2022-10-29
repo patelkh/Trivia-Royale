@@ -14,6 +14,14 @@ export default function App() {
   const [amount, setAmount] = useState(5);
   const [score, setScore] = useState(0);
 
+  function resetState() {
+    localStorage.removeItem('trivia')
+    setCategory(11);
+    setDifficulty("easy");
+    setAmount(5);
+    setScore(0);
+  }
+
   return (
     <div className="App">
       <Router>
@@ -23,10 +31,7 @@ export default function App() {
             path="/"
             element={
               <Home
-                category={category}
-                difficulty={difficulty}
                 quizType={quizType}
-                amount={amount}
                 setCategory={setCategory}
                 setDifficulty={setDifficulty}
                 setAmount={setAmount}
@@ -36,7 +41,12 @@ export default function App() {
           <Route
             path="/trivia"
             element={
-              <Trivia category={category} score={score} setScore={setScore} />
+              <Trivia
+                category={category}
+                score={score}
+                setScore={setScore}
+                resetState={resetState}
+              />
             }
           ></Route>
           <Route

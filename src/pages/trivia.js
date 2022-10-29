@@ -4,7 +4,7 @@ import { categories } from "../triviaSettings";
 import TriviaCard from "../components/TriviaCard";
 import { useNavigate } from "react-router-dom";
 
-export default function Trivia({ category, score, setScore }) {
+export default function Trivia({ category, score, setScore, resetState}) {
   const [title, setTitle] = useState("");
   const [triviaData, setTrivia] = useState(
     JSON.parse(localStorage.getItem("trivia"))
@@ -57,6 +57,7 @@ export default function Trivia({ category, score, setScore }) {
   }
 
   function goHome() {
+    resetState()
     navigate("/");
   }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { categories, difficulty, amount } from "../triviaSettings";
+import { categories, difficulty as diffOptions, amount as amountOptions } from "../triviaSettings";
 import "./componentStyles.css";
 
 export default function Settings({
@@ -19,7 +19,7 @@ export default function Settings({
   }
 
   function DisplayDifficulty() {
-    return Object.entries(difficulty).map((option, index) => {
+    return Object.entries(diffOptions).map((option, index) => {
       return (
         <option key={index} defaultValue={option[0]}>
           {option[1]}
@@ -29,7 +29,7 @@ export default function Settings({
   }
 
   function DisplayAmount() {
-    return amount.map((option, index) => {
+    return amountOptions.map((option, index) => {
       return (
         <option key={index} defaultValue={option}>
           {option}
@@ -40,9 +40,19 @@ export default function Settings({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let category = Object.keys(categories).find(
+      (key) => categories[key] === e.target.category.value
+    )
+    let difficulty = Object.keys(diffOptions).find(
+      (key) => diffOptions[key] === e.target.difficulty.value
+    )
+    let amount = parseInt(e.target.amount.value) 
+    setCategory(category)
+    setDifficulty(difficulty)
+    setAmount(amount)
     const button = document.querySelector(".setting-form-button");
     button.classList.add("setting-form-button-disable");
-    getQuestions();
+    getQuestions(category, difficulty, amount);
   };
 
   return (
@@ -54,13 +64,6 @@ export default function Settings({
           className="setting-form-field"
           id="category"
           name="category"
-          onSelect={(e) =>
-            setCategory(
-              Object.keys(categories).find(
-                (key) => categories[key] === e.target.value
-              )
-            )
-          }
         >
           <DisplayCategories />
         </select>
@@ -69,13 +72,6 @@ export default function Settings({
           className="setting-form-field"
           id="difficulty"
           name="difficulty"
-          onSelect={(e) =>
-            setDifficulty(
-              Object.keys(difficulty).find(
-                (key) => difficulty[key] === e.target.value
-              )
-            )
-          }
         >
           <DisplayDifficulty />
         </select>
@@ -88,11 +84,12 @@ export default function Settings({
           className="setting-form-field"
           id="amount"
           name="amount"
-          onSelect={(e) => setAmount(e.target.value)}
         >
           <DisplayAmount />
         </select>
-        <button className="setting-form-button">Start</button>
+        <button type="submit" className="setting-form-button">
+          Start
+        </button>
       </form>
     </div>
   );

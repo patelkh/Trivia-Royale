@@ -4,18 +4,17 @@ import Settings from "../components/Settings";
 import "./pageStyles.css";
 
 export default function Home({
-  category,
-  difficulty,
   quizType,
-  amount,
   setCategory,
   setDifficulty,
   setAmount,
 }) {
   const navigate = useNavigate();
 
-  const getQuestions = async () => {
+  const getQuestions = async (category, difficulty, amount) => {
+    localStorage.removeItem('trivia')
     let openTriviaURL = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${quizType}`;
+    console.log(openTriviaURL);
 
     try {
       const response = await fetch(openTriviaURL);
