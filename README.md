@@ -1,3 +1,4 @@
+Note: App is down as heroku no longer supports free deployments.
 # Single Player Trivia App
 * **View app:** https://kays-trivia-app.herokuapp.com<br><br>
 
